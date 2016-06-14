@@ -2,10 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@color/c_292521"
-    tools:context=".activity.FirstLayoutActivity">
-
+    android:layout_height="match_parent"
+    tools:context="com.dev.liji.materialdesigncolor.activity.SecondLayoutActivity">
 
     <com.dev.liji.materialdesigncolor.widget.Headview
         android:id="@+id/headview"
@@ -13,12 +12,5 @@
         android:layout_height="wrap_content">
 
     </com.dev.liji.materialdesigncolor.widget.Headview>
-
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_data"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/headview" />
 
 </RelativeLayout>

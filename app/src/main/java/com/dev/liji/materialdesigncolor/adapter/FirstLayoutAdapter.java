@@ -1,14 +1,14 @@
 package com.dev.liji.materialdesigncolor.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dev.liji.materialdesigncolor.R;
 import com.dev.liji.materialdesigncolor.model.MaterialDesignColor;
@@ -22,6 +22,7 @@ public class FirstLayoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     LayoutInflater mLayoutInflater;
     Context context;
+    onItemClickListener listener;
     List<MaterialDesignColor> materialDesignColorList;
 
     public FirstLayoutAdapter(Context context, List<MaterialDesignColor> materialDesignColorList) {
@@ -36,7 +37,7 @@ public class FirstLayoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
         MaterialDesignColor materialDesignColor = materialDesignColorList.get(position);
 
         ((FirstLayoutViewHolder) holder).cardbg.setBackgroundColor(materialDesignColor.getMDColor());
@@ -44,11 +45,30 @@ public class FirstLayoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         ((FirstLayoutViewHolder) holder).tvLevel.setText(materialDesignColor.getLevel());
         ((FirstLayoutViewHolder) holder).tvValue.setText(materialDesignColor.getValue());
 
+        if (listener != null) {
+            ((FirstLayoutViewHolder) holder).cardbg.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int pos = holder.getLayoutPosition();
+                    Toast.makeText(context, "预览" + pos, Toast.LENGTH_LONG).show();
+                    listener.onItemClick(((FirstLayoutViewHolder) holder).cardbg, pos);
+                }
+            });
+        }
     }
 
     @Override
     public int getItemCount() {
         return materialDesignColorList.size();
+    }
+
+
+    public interface onItemClickListener {
+        void onItemClick(View view, int posititon);
+    }
+
+    public void setOnItemClickListener(onItemClickListener listener) {
+        this.listener = listener;
     }
 
     public class FirstLayoutViewHolder extends RecyclerView.ViewHolder {

@@ -1,6 +1,7 @@
 package com.dev.liji.materialdesigncolor.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -70,8 +71,7 @@ public class SecondLayoutActivity extends ActivityBase {
         positionValue = Integer.parseInt(this.getIntent().getStringExtra("pos"));
         JLogUtils.D("second: " + positionValue);
         headview.setTitle("" + ColorFirstPattle.nameFirst[positionValue]);
-
-
+        headview.setBackgroundCustomeColor(ColorFirstPattle.mdColorFirst[positionValue]);
         materialDesignColors = getMaterialColorsList();
         secondLayoutAdapter = new SecondLayoutAdapter(SecondLayoutActivity.this, materialDesignColors);
         recyclerView.setAdapter(secondLayoutAdapter);
@@ -102,7 +102,7 @@ public class SecondLayoutActivity extends ActivityBase {
             materialDesignColor.setName(ColorFirstPattle.nameFirst[positionValue]);
             materialDesignColor.setLevel((String) objects[i][0]);
             materialDesignColor.setValue(((String) objects[i][1]));
-            materialDesignColor.setMDColor(((Integer.parseInt((String) objects[i][2]))));
+            materialDesignColor.setMDColor(((Color.parseColor((String) objects[i][1]))));
             materialList.add(materialDesignColor);
         }
         return materialList;

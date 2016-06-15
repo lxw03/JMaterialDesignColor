@@ -1,5 +1,6 @@
 package com.dev.liji.materialdesigncolor.activity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -51,7 +52,6 @@ public class SecondLayoutHorizonalActivity extends ActivityBase {
                 finish();
             }
         });
-
         layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerData.setLayoutManager(layoutManager);
@@ -61,7 +61,7 @@ public class SecondLayoutHorizonalActivity extends ActivityBase {
     public void initData() {
         positionValue = Integer.parseInt(this.getIntent().getStringExtra("positionValue"));
         headview.setTitle("" + ColorFirstPattle.nameFirst[positionValue]);
-//        tvName.setText("" + ColorFirstPattle.nameFirst[positionValue]);
+        headview.setBackgroundCustomeColor(ColorFirstPattle.mdColorFirst[positionValue]);
 
         materialDesignColors = getMaterialColors();
         secondLayoutHorizonalAdapter = new SecondLayoutHorizonalAdapter(SecondLayoutHorizonalActivity.this, materialDesignColors);
@@ -71,6 +71,7 @@ public class SecondLayoutHorizonalActivity extends ActivityBase {
             public void onChange(View view, int position) {
                 Object[][] objects = (Object[][]) ColorFirstPattle.objects[positionValue];
                 tvName.setText("" + (String) objects[position][0] + " " + (String) objects[position][1]);
+                tvName.setTextColor(Color.parseColor((String) objects[position][1]));
             }
         });
 
@@ -89,7 +90,7 @@ public class SecondLayoutHorizonalActivity extends ActivityBase {
             materialDesignColor.setName(ColorFirstPattle.nameFirst[positionValue]);
             materialDesignColor.setLevel((String) objects[i][0]);
             materialDesignColor.setValue(((String) objects[i][1]));
-            materialDesignColor.setMDColor(((Integer.parseInt((String) objects[i][2]))));
+            materialDesignColor.setMDColor(((Color.parseColor((String) objects[i][1]))));
             materialList.add(materialDesignColor);
         }
         return materialList;

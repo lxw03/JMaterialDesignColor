@@ -17,6 +17,7 @@ public class Headview extends RelativeLayout {
 
     private LayoutInflater mInflayout;
     private ImageView imgBack;
+    private RelativeLayout rlBg;
     private TextView tvTitle;
     private TextView tvAction;
     private final int TYPE_CENTER = 0;
@@ -43,10 +44,19 @@ public class Headview extends RelativeLayout {
         mInflayout = LayoutInflater.from(context);
         View view = mInflayout.inflate(R.layout.headview, this);
         imgBack = (ImageView) view.findViewById(R.id.headview_img_back);
+        rlBg = (RelativeLayout) view.findViewById(R.id.rl_bg);
         tvAction = (TextView) view.findViewById(R.id.headview_tv_action);
         tvTitle = (TextView) view.findViewById(R.id.headview_tv_title);
     }
 
+    /**
+     * 设置背景色
+     *
+     * @param color
+     */
+    public void setBackgroundCustomeColor(int color) {
+        rlBg.setBackgroundColor(color);
+    }
 
     /**
      * 设置标题

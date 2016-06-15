@@ -14,11 +14,10 @@
     </com.dev.liji.materialdesigncolor.widget.Headview>
 
     <RelativeLayout
-        android:id="@+id/rl_bg"
+        android:id="@+id/rlbg"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_below="@+id/headview"
-        android:background="@color/c_49433b">
+        android:layout_below="@+id/headview">
 
         <TextView
             android:id="@+id/tv_name"
@@ -49,7 +48,7 @@
         android:id="@+id/rl_info"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_below="@+id/rl_bg"
+        android:layout_below="@+id/rlbg"
         android:layout_marginLeft="20dp">
 
         <TextView

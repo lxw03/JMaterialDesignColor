@@ -4,8 +4,11 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="c_292521">#292521</color>
+    <color name="c_49433b">#49433B</color>
     <color name="c_1B1915">#1B1915</color>
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
     <color name="c_fb6884">#FB6884</color>
+    <color name="c_c6b5a0">#C6B5A0</color>
+    <color name="c_fffcde">#FFFCDE</color>
 </resources>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_292521"
+    tools:context="com.dev.liji.materialdesigncolor.activity.SecondLayoutDetailInfo">
+
+    <com.dev.liji.materialdesigncolor.widget.Headview
+        android:id="@+id/headview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.dev.liji.materialdesigncolor.widget.Headview>
+
+    <RelativeLayout
+        android:id="@+id/rl_bg"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/headview"
+        android:background="@color/c_49433b">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_level"
+            android:layout_alignLeft="@+id/tv_level"
+            android:layout_marginBottom="5dp"
+            android:text="Red"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:text="700"
+            android:textColor="@color/c_c6b5a0"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_info"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/rl_bg"
+        android:layout_marginLeft="20dp">
+
+        <TextView
+            android:id="@+id/tv_web_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:text="web color"
+            android:textColor="@color/c_c6b5a0"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_web_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tv_web_color"
+            android:layout_marginTop="5dp"
+            android:text="#D32F2F"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/view_show"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignLeft="@+id/rl_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/c_49433b" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_info_rgb"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/rl_info"
+        android:layout_marginLeft="20dp">
+
+        <TextView
+            android:id="@+id/tv_rgb_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:text="rgb color"
+            android:textColor="@color/c_c6b5a0"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/rl_rgb_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tv_rgb_color"
+            android:layout_marginTop="5dp"
+            android:text="R211 G222 B222"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/view_show_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignLeft="@+id/rl_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/c_49433b" />
+
+    </RelativeLayout>
+</RelativeLayout>

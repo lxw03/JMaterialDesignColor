@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:circle="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardbg"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="@color/c_292521"
+    android:paddingBottom="5dp"
+    android:paddingLeft="5dp">
+
+
+    <com.dev.liji.materialdesigncolor.widget.ColorCircleView
+        android:id="@+id/circle"
+        android:layout_width="45dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        circle:circle_radius="10dp"
+        circle:circle_soild_color="@color/white" />
+
+    <RelativeLayout
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/view_show"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/circle"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Red"
+            android:textColor="@color/c_fffcde"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_level"
+            android:text="#78fc88"
+            android:textColor="@color/c_c6b5a0"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_show"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignLeft="@+id/rl_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/c_49433b" />
+
+
+</RelativeLayout>

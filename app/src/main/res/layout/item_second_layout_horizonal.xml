@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:circle="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardbg"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:background="@color/c_292521"
+    android:paddingBottom="5dp"
+    android:paddingLeft="5dp">
+
+
+    <com.dev.liji.materialdesigncolor.widget.ColorCircleView
+        android:id="@+id/circle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        circle:circle_radius="60dp"
+        circle:circle_soild_color="@color/white" />
+
+
+
+</RelativeLayout>

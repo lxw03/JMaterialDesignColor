@@ -58,9 +58,8 @@ public class FirstLayoutActivity extends ActivityBase {
 
                 Log.d("position: ", "" + posititon);
                 Intent intent = new Intent(FirstLayoutActivity.this, SecondLayoutActivity.class);
-                intent.putExtra("position", posititon);
+                intent.putExtra("pos", "" + posititon);
                 startActivity(intent);
-
 
             }
         });

@@ -11,20 +11,21 @@ import android.widget.TextView;
 import com.dev.liji.materialdesigncolor.R;
 import com.dev.liji.materialdesigncolor.model.MaterialDesignColor;
 import com.dev.liji.materialdesigncolor.utils.JLogUtils;
+import com.dev.liji.materialdesigncolor.widget.ColorCircleView;
 
 import java.util.List;
 
 /**
  * Created by liji on 16-6-14.
  */
-public class FirstLayoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class SecondLayoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     LayoutInflater mLayoutInflater;
     Context context;
     onItemClickListener listener;
     List<MaterialDesignColor> materialDesignColorList;
 
-    public FirstLayoutAdapter(Context context, List<MaterialDesignColor> materialDesignColorList) {
+    public SecondLayoutAdapter(Context context, List<MaterialDesignColor> materialDesignColorList) {
         mLayoutInflater = LayoutInflater.from(context);
         this.context = context;
         this.materialDesignColorList = materialDesignColorList;
@@ -32,25 +33,23 @@ public class FirstLayoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new FirstLayoutViewHolder(mLayoutInflater.inflate(R.layout.item_first_layout, parent, false));
+        return new SecondLayoutViewHolder(mLayoutInflater.inflate(R.layout.item_second_layout, parent, false));
     }
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
         MaterialDesignColor materialDesignColor = materialDesignColorList.get(position);
-
-        ((FirstLayoutViewHolder) holder).cardbg.setBackgroundColor(materialDesignColor.getMDColor());
-        ((FirstLayoutViewHolder) holder).tvName.setText(materialDesignColor.getName());
-        ((FirstLayoutViewHolder) holder).tvLevel.setText(materialDesignColor.getLevel());
-        ((FirstLayoutViewHolder) holder).tvValue.setText(materialDesignColor.getValue());
+        ((SecondLayoutViewHolder) holder).circle.setCircleSoildColor(materialDesignColor.getMDColor());
+        ((SecondLayoutViewHolder) holder).tvLevel.setText(materialDesignColor.getLevel());
+        ((SecondLayoutViewHolder) holder).tvValue.setText(materialDesignColor.getValue());
 
         if (listener != null) {
-            ((FirstLayoutViewHolder) holder).cardbg.setOnClickListener(new View.OnClickListener() {
+            ((SecondLayoutViewHolder) holder).cardbg.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     int pos = holder.getLayoutPosition();
                     JLogUtils.D("预览" + pos);
-                    listener.onItemClick(((FirstLayoutViewHolder) holder).cardbg, pos);
+                    listener.onItemClick(((SecondLayoutViewHolder) holder).cardbg, pos);
                 }
             });
         }
@@ -70,18 +69,18 @@ public class FirstLayoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         this.listener = listener;
     }
 
-    public class FirstLayoutViewHolder extends RecyclerView.ViewHolder {
+    public class SecondLayoutViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvName;
         TextView tvLevel;
         TextView tvValue;
+        ColorCircleView circle;
         RelativeLayout cardbg;
 
-        public FirstLayoutViewHolder(View itemView) {
+        public SecondLayoutViewHolder(View itemView) {
             super(itemView);
             tvLevel = (TextView) itemView.findViewById(R.id.tv_level);
-            tvName = (TextView) itemView.findViewById(R.id.tv_name);
             tvValue = (TextView) itemView.findViewById(R.id.tv_value);
+            circle = (ColorCircleView) itemView.findViewById(R.id.circle);
             cardbg = (RelativeLayout) itemView.findViewById(R.id.cardbg);
         }
     }
